@@ -1,10 +1,7 @@
 import data_processing
 import similarity
 from rules import ExpertSystem, rules, model
-import os
 
-# This line is to suppress the warning message from tensorflow
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 
 # Ask the user for the TV show they have recently watched
 user = input('What TV Show have you recently watched?')

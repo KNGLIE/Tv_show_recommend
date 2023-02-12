@@ -1,14 +1,8 @@
-import os
-import sys
-import logging
-logging.basicConfig(level=logging.ERROR)
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 from sklearn.metrics.pairwise import cosine_similarity
 import tensorflow as tf
 import data_processing
 from similarity import get_vectors
-tf.compat.v1.logging.set_verbosity(v=1)
-tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
+
 
 class Rule:
     def __init__(self, antecedent, consequence, weight):
@@ -40,7 +34,6 @@ class ExpertSystem:
         return sorted(similarity_scores, key=lambda x: x[1], reverse=True)
 
     def recommend_tv_show(self, tv_show):
-        os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
         recommendations = self.get_recommendations(tv_show)
         if not recommendations:
             print("No recommendations found")
@@ -81,5 +74,4 @@ model.fit(vectors, vectors, epochs=10, batch_size=32, verbose=0)
 
 
 def create_expert_system(rules, model):
-    sys.stderr = open(os.devnull, 'w')
     return ExpertSystem(rules, model)

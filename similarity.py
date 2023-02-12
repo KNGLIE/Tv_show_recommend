@@ -1,6 +1,3 @@
-import os
-
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '1'
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
