@@ -1,0 +1,3 @@
+To run this program, install necessary dependencies (pandas, nltk, os, sklearn, tensorflow)
+run main.py, all tv-shows that are able to be used as an input are the one that are in the tv-db.csv. 
+type one in, it takes a little while to actually get the ten recommendations, so just wait. If you typed in something that isnt in the database, an error message will be output. 
