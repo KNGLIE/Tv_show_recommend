@@ -1,6 +1,6 @@
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+import pandas as pd
 import data_processing
 
 
@@ -17,4 +17,4 @@ def get_vectors():
     return vectors
 
 
-new_df = data_processing.prepare_data()
+new_df = pd.read_csv('ew.csv')

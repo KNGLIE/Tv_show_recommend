@@ -36,6 +36,9 @@ def prepare_data():
     new_df['title'] = new_df['title'].apply(lambda x: x.lower())
     # Stem the tags column
     new_df['tags'] = new_df['tags'].apply(stem)
+
+
+    new_df.to_csv('ew.csv')
     return new_df
 
 
